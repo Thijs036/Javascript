@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dieren Shuffle</title>
+    <style>
+        html {
+            margin: 0 0 0 0;
+        }
+        body {
+            font-family: "Serif", Serif;
+            text-align: center;
+        }
+        #imgs {
+            width: 900px;
+            height: 900px;
+            border: solid 5px black;
+            font-size: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Dieren Shuffle</h1>
+<div id="imgs">
+    <img src="img/plaatje1.jpg">
+    <img src="img/plaatje2.jpg">
+    <img src="img/plaatje3.jpg">
+    <img src="img/plaatje4.jpg">
+    <img src="img/plaatje5.jpg">
+    <img src="img/plaatje6.jpg">
+    <img src="img/plaatje7.jpg">
+    <img src="img/plaatje8.jpg">
+    <img src="img/plaatje9.jpg">
+</div>
+</body>
+<script>
+    var images = document.getElementsByTagName("img");
+    var random = 0;
+
+    var randomNumbers = [];
+
+    while (randomNumbers.length < 9) {
+        random = Math.floor(Math.random() * 9) + 1;
+        if (randomNumbers.lastIndexOf(random) == -1) {
+        randomNumbers.push(random)
+        }
+    }
+    random = 0;
+    for (var image in images) {
+        images[image].src = "img/plaatje" + randomNumbers[random] + ".jpg";
+        random++;
+    }
+</script>
+</html>

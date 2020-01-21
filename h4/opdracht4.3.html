@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crookapp</title>
+    <style>
+        .slideholder {
+            width: 400px;
+            height: 100px;
+            border: solid black 1px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="slideholder" class="slideholder"></div>
+<div id="slideholder1" class="slideholder"></div>
+<div id="slideholder2" class="slideholder"></div>
+<script>
+    var ogen = [1, 2, 3, 4];
+    var neuzen = [1, 2, 3, 4];
+    var monden = [1, 2, 3, 4];
+    var teller = 0;
+    var slideholder = document.getElementById("slideholder");
+    var slideholder1 = document.getElementById("slideholder1");
+    var slideholder2 = document.getElementById("slideholder2");
+    slideholder1.style.backgroundImage = "url('../h4/neuzen/neus1.jpg')";
+    slideholder.style.backgroundImage = "url('../h4/ogen/ogen1.jpg')";
+    slideholder2.style.backgroundImage = "url('../h4/monden/mond1.jpg')";
+
+    slideholder2.addEventListener("click", function () {
+        slideholder2.style.backgroundImage = "url('../h4/monden/mond" + Getmonden() + ".jpg')";
+
+        slideholder1.addEventListener("click", function () {
+            slideholder1.style.backgroundImage = "url('../h4/neuzen/neus" + Getneuzen() + ".jpg')";
+
+            slideholder.addEventListener("click", function () {
+                slideholder.style.backgroundImage = "url('../h4/ogen/ogen" + Getogen() + ".jpg')";
+            })
+        });
+
+        function Getogen() {
+            if (teller >= ogen.length) {
+                teller = 1;
+            } else {
+                teller++;
+            }
+            console.log(teller);
+            return teller;
+        }
+
+        function Getneuzen() {
+            if (teller >= neuzen.length) {
+                teller = 1;
+            } else {
+                teller++;
+            }
+            console.log(teller);
+            return teller;
+        }
+
+        function Getmonden() {
+            if (teller >= monden.length) {
+                teller = 1;
+            } else {
+                teller++;
+            }
+
+
+            console.log(teller);
+            return teller;
+        }
+    })
+</script>
+</body>
+</html>

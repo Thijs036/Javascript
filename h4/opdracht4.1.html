@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Opdracht</title>
+</head>
+<body>
+
+<script>
+    var mijnauto = {
+        kleur: "rood",
+        merk: "ford",
+        staat: "vrij nieuw",
+        snelheid: "2",
+
+        // Functies
+        gasgeven: function () {
+            this.snelheid += 2;
+            console.log(this.snelheid);
+        },
+
+        toeteren: function () {
+            console.log("toet!")
+        }
+    }
+    console.log(mijnauto.kleur);
+    console.log(mijnauto.merk);
+    console.log(mijnauto.staat);
+    console.log(mijnauto.snelheid);
+    mijnauto.toeteren();
+    mijnauto.gasgeven();
+    mijnauto.gasgeven();
+    mijnauto.gasgeven();
+    mijnauto.gasgeven();
+    mijnauto.gasgeven();
+    mijnauto.gasgeven();
+    mijnauto.gasgeven();
+    mijnauto.gasgeven();
+    mijnauto.gasgeven();
+</script>
+
+
+</body>
+</html>
